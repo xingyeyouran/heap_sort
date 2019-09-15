@@ -47,13 +47,16 @@ void max_heapify(int* arr, int size, int i)
 }
 void bulid_max_heap(int* arr, int size)
 {
-
+	for (int i = size>>1; i >=0 ; i--)
+	{
+		max_heapify(arr, size, i);
+	}
 }
 int main()
 {
 	int arr[] = { 27,17,3,16,13,10,1,5,7,12,4,8,9,0 };
 	int size = sizeof(arr) / sizeof(int);
-	max_heapify(arr, size, 2);
+	bulid_max_heap(arr, size);
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << arr[i] << " ";
